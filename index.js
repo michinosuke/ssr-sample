@@ -1,12 +1,13 @@
 import express from 'express';
-import ssr from './src/ssr';
+import ssr from './views/ssr';
 
 const app = express();
 
-// 3000番ポートでWebサーバを立てる
+app.use(express.static('assets'));
+
 app.listen(3000);
 
-// https://localhost:3000 にアクセスがあったら ssr() を返す
 app.get('/', (_, res) => {
-  res.send(ssr());
+  const response = ssr();
+  res.send(response);
 });

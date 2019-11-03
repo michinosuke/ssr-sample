@@ -2,5 +2,8 @@
   "extends": [
       "airbnb",
       "airbnb/hooks"
-  ]
+  ],
+  "env": {
+    "browser": true
+  }
 }
